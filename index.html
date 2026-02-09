@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl Kemmerich - Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-secondary: #8b949e;
+            --border: #30363d;
+            --brand-blue: #58a6ff; 
+            --blue-hover: #1f6feb;
+            --rust-red: #B7410E;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem 1rem;
+        }
+
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; color: #fff; }
+        .bio { color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 1.5rem; }
+        
+        .cv-section {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .cv-item { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
+        .cv-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
+        .cv-title { font-weight: bold; color: #fff; font-size: 1.1rem; }
+        .cv-meta { display: flex; gap: 15px; color: var(--text-secondary); font-size: 0.9rem; margin-top: 5px; align-items: center; }
+
+        .btn-container { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            gap: 8px;
+        }
+
+        /* BLUE BUTTONS */
+        .btn-linkedin { background-color: #0077b5; color: white; }
+        .btn-linkedin:hover { background-color: #005a8a; transform: translateY(-2px); }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--brand-blue);
+        }
+        .btn-outline:hover { border-color: var(--brand-blue); background: rgba(88, 166, 255, 0.1); transform: translateY(-2px); }
+        
+        .btn-github {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        }
+
+        .btn-github:hover {
+            background-color: #30363d;
+            border-color: #8b949e;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .icon-svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .icon-svg { width: 18px; height: 18px; fill: currentColor; }
+        
+        main { max-width: 1000px; margin: 0 auto; padding: 0 1rem 2rem 1rem; }
+        .section-title {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--brand-blue); }
+        .card h3 { margin: 0 0 0.5rem 0; color: var(--brand-blue); }
+        .card h3 a { text-decoration: none; color: inherit; }
+        .card p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; flex-grow: 1;}
+
+        .card-stats { display: flex; gap: 1rem; font-size: 0.8rem; color: var(--text-secondary); margin-top: auto; }
+        .language-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
+
+        footer { text-align: center; padding: 2rem; color: var(--text-secondary); border-top: 1px solid var(--border); margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Carl Kemmerich</h1>
+        <p class="bio">M.Sc. Robotics, Cognition, Intelligence @ TUM</p>
+        <div class="btn-container">
+            <a href="https://www.linkedin.com/in/carl-kemmerich/" class="btn btn-linkedin" target="_blank">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn Profile
+            <a href="https://github.com/YOUR_GITHUB_USERNAME" class="btn btn-github" target="_blank">
+                <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.419-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title">Education</h2>
+        <div class="cv-section">
+            <div class="cv-item">
+                <div class="cv-header">
+                    <span class="cv-title">M.Sc. Robotics, Cognition, Intelligence</span>
+                    <span style="color: var(--brand-blue); font-weight: bold;">2025 - Present</span>
+                </div>
+                <div class="cv-meta"><span>Technical University of Munich (TUM)</span><span>Munich, Germany</span></div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-header">
+                    <span class="cv-title">B.Sc. Mathematics & Computer Science</span>
+                    <span style="color: var(--brand-blue); font-weight: bold;">2021 - 2025</span>
+                </div>
+                <div class="cv-meta"><span>Ludwig Maximilian University (LMU)</span><span>Munich, Germany</span></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Selected Projects</h2>
+        <div id="repo-grid" class="grid"></div>
+    </main>
+
+    <footer><p>&copy; <span id="year"></span> Carl Kemmerich.</p></footer>
+
+    <script>
+        const username = 'carlk13'; 
+        const hiddenRepos = ['project-real-monitoring-system', 'real-time-climate-monitoring-system'];
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`)
+            .then(res => res.json())
+            .then(repos => {
+                const grid = document.getElementById('repo-grid');
+                repos.forEach(repo => {
+                    if (hiddenRepos.includes(repo.name)) return;
+                    
+                    const lang = repo.language || 'Code';
+                    let dotColor = '#58a6ff'; 
+                    if (lang === 'Rust') dotColor = '#B7410E'; 
+                    if (lang === 'Python') dotColor = '#3572A5';
+                    if (lang === 'C++') dotColor = '#f34b7d';
+
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                        <p>${repo.description || 'No description provided.'}</p>
+                        <div class="card-stats">
+                            <span><span class="language-dot" style="background-color: ${dotColor}"></span>${lang}</span>
+                            <span>⭐ ${repo.stargazers_count}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+    </script>
+</body>
+</html>
